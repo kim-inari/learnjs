@@ -44,7 +44,7 @@ learnjs.problemView = function(data) {
     function checkAnswer() {
         var def = $.Deferred();
         var test = problemData.code.replace('__', answer.val()) + '; problem();';
-        var worker = new Worker(worker.js'');
+        var worker = new Worker('worker.js');
         worker.onmessage = function(e) {
             if(e.data) {
                 def.resolve(e.data);
